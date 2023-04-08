@@ -2,7 +2,7 @@
 let injector = document.querySelector(`#section_main`);
 
 injector.insertAdjacentHTML(`beforeend`,
-`<article id="main_article">
+    `<article id="main_article">
 <span>
 <input type="value" id="post_input">
 <button class="POST">POST</button>
@@ -30,7 +30,7 @@ injector.insertAdjacentHTML(`beforeend`,
 
 
 
-function POSTsuccess(response){
+function POSTsuccess(response) {
 
     let output = document.querySelector(`#main_article`);
 
@@ -39,7 +39,7 @@ function POSTsuccess(response){
 
 };
 
-function POSTfailure(){
+function POSTfailure() {
 
     let output = document.querySelector(`#main_article`);
 
@@ -50,7 +50,7 @@ function POSTfailure(){
 let post_input = document.querySelector(`#post_input`);
 let post_input_value = post_input[`value`];
 
-function POST_click(details){
+function POST_click(details) {
 
 
 
@@ -63,21 +63,21 @@ function POST_click(details){
         data: {
 
             title: post_input_value
-            
+
         }
 
     }).then(POSTsuccess).catch(POSTfailure);
-}; 
+};
 
 let post_button = document.querySelectorAll(`.POST`);
-for(let counter = 0; counter < post_button.length; counter = counter +1){
-post_button[counter].addEventListener(`click`, POST_click);
+for (let counter = 0; counter < post_button.length; counter = counter + 1) {
+    post_button[counter].addEventListener(`click`, POST_click);
 
 
 
 };
 
-function PATCHsuccess(response){
+function PATCHsuccess(response) {
 
     let output = document.querySelector(`#main_article`);
 
@@ -86,7 +86,7 @@ function PATCHsuccess(response){
 
 };
 
-function PATCHfailure(){
+function PATCHfailure() {
 
     let output = document.querySelector(`#main_article`);
 
@@ -95,9 +95,9 @@ function PATCHfailure(){
 
 
 
-function PATCH_click(details){
+function PATCH_click(details) {
 
-    
+
 
     axios({
 
@@ -110,7 +110,7 @@ function PATCH_click(details){
             title: `this is the replacement`,
 
             body: post_input_value
-            
+
         }
 
     }).then(PATCHsuccess).catch(PATCHfailure);
@@ -119,8 +119,8 @@ function PATCH_click(details){
 };
 
 let patch_button = document.querySelectorAll(`.PATCH`);
-for(let counter = 0; counter < patch_button.length; counter = counter +1){
-patch_button[counter].addEventListener(`click`, PATCH_click);
+for (let counter = 0; counter < patch_button.length; counter = counter + 1) {
+    patch_button[counter].addEventListener(`click`, PATCH_click);
 
 
 
@@ -130,7 +130,7 @@ patch_button[counter].addEventListener(`click`, PATCH_click);
 
 
 
-function DELETEsucess(){
+function DELETEsucess() {
 
 
     let output = document.querySelector(`#main_article`);
@@ -142,7 +142,7 @@ function DELETEsucess(){
 };
 
 
-function DELETEfailure(){
+function DELETEfailure() {
 
 
     let output = document.querySelector(`#main_article`);
@@ -153,7 +153,7 @@ function DELETEfailure(){
 
 };
 
-function DELETE_click(details){
+function DELETE_click(details) {
 
 
     axios({
@@ -170,8 +170,8 @@ function DELETE_click(details){
 
 
 let delete_button = document.querySelectorAll(`.DELETE`);
-for(let counter = 0; counter < delete_button.length; counter = counter +1){
-delete_button[counter].addEventListener(`click`, DELETE_click);
+for (let counter = 0; counter < delete_button.length; counter = counter + 1) {
+    delete_button[counter].addEventListener(`click`, DELETE_click);
 
 
 
@@ -183,17 +183,17 @@ delete_button[counter].addEventListener(`click`, DELETE_click);
 
 
 
-function GETsuccess(response){
+function GETsuccess(response) {
     let axiosgetpage = document.querySelector(`#GET`);
 
 
 
-    for(let counter = 0; counter < response[`data`].length; counter = counter +1){
+    for (let counter = 0; counter < response[`data`].length; counter = counter + 1) {
 
 
-        axiosgetpage.insertAdjacentHTML(`beforeend`, 
-        
-        `<span>
+        axiosgetpage.insertAdjacentHTML(`beforeend`,
+
+            `<span>
         
         
         <h3>${response[`data`][counter][`title`]}</h3>
@@ -204,9 +204,9 @@ function GETsuccess(response){
         
         
         <span>`
-        
-        
-        
+
+
+
         )
 
     }
@@ -215,7 +215,7 @@ function GETsuccess(response){
 
 };
 
-function GETfailure(){
+function GETfailure() {
     let axiosgetpage = document.querySelector(`#GET`);
     axiosgetpage.insertAdjacentHTML(`beforeend`, `<h3>failure</h3>`);
 

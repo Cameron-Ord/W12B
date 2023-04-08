@@ -1,0 +1,30 @@
+#footer {
+    min-height: 15vh;
+    background-color: #235789;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    ;
+    display: grid;
+
+    justify-items: center;
+
+    align-items: center;
+
+    >span {
+
+
+        grid-template-columns: 30vw 30vw 30vw;
+
+        color: #FDFFFC;
+
+        display: grid;
+
+        justify-items: center;
+
+        align-items: center;
+
+
+    }
+
+
+
+}
