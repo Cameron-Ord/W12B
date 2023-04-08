@@ -24,6 +24,22 @@ injector.insertAdjacentHTML(`beforeend`,
 
 
 
+function POSTsuccess(response){
+
+    let output = document.querySelector(`#section_secondary`);
+
+
+    output.insertAdjacentHTML(`beforeend`, `<h3>success</h3>`);
+
+}
+
+function POSTfailure(){
+
+    let output = document.querySelector(`#section_secondary`);
+
+    output.insertAdjacentHTML(`beforeend`, `<h3>failure</h3>`);
+}
+
 function POST_click(details){
 
     let post_input = document.querySelector(`#post_input`);
@@ -41,6 +57,13 @@ function POST_click(details){
             
         }
 
-    }).then(POSTsucess).catch(POSTfailure);
+    }).then(POSTsuccess).catch(POSTfailure);
 }; 
 
+let post_button = document.querySelectorAll(`.POST`);
+for(let counter = 0; counter < post_button.length; counter = counter +1){
+post_button[counter].addEventListener(`click`, POST_click);
+
+
+
+}
